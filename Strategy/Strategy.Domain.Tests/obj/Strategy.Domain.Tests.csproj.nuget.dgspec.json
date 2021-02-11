@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj": {}
+    "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj": {}
   },
   "projects": {
-    "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj": {
+    "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj",
+        "projectUniqueName": "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj",
         "projectName": "Strategy.Domain.Tests",
-        "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj",
+        "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj",
         "packagesPath": "C:\\Users\\Kristina\\.nuget\\packages\\",
-        "outputPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\obj\\",
+        "outputPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -28,8 +28,8 @@
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj": {
-                "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj"
+              "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj": {
+                "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj"
               }
             }
           }
@@ -61,12 +61,12 @@
         }
       }
     },
-    "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj": {
+    "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj",
+        "projectUniqueName": "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj",
         "projectName": "Strategy.Domain",
-        "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj"
+        "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\OOLS_lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj"
       },
       "frameworks": {
         "net462": {}

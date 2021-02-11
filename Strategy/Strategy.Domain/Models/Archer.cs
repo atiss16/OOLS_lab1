@@ -3,7 +3,7 @@
     /// <summary>
     /// Лучник.
     /// </summary>
-    public sealed class Archer
+    public sealed class Archer 
     {
         /// <inheritdoc />
         public Archer(Player player)

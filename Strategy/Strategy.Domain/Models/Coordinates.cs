@@ -16,12 +16,12 @@
         /// <summary>
         /// Координата X.
         /// </summary>
-        public int X { get; }
+        public int X { get; set;  }
 
         /// <summary>
         /// Координата Y.
         /// </summary>
-        public int Y { get; }
+        public int Y { get; set;  }
 
 
         /// <inheritdoc />
