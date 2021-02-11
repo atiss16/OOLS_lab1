@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj": {}
+  },
+  "projects": {
+    "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj",
+        "projectName": "Strategy.Domain.Tests",
+        "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\Strategy.Domain.Tests.csproj",
+        "packagesPath": "C:\\Users\\Kristina\\.nuget\\packages\\",
+        "outputPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Kristina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net462"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net462": {
+            "projectReferences": {
+              "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj": {
+                "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net462": {
+          "dependencies": {
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj",
+        "projectName": "Strategy.Domain",
+        "projectPath": "D:\\learning\\OSU\\ООЯиС\\lab1\\Strategy\\Strategy.Domain\\Strategy.Domain.csproj"
+      },
+      "frameworks": {
+        "net462": {}
+      }
+    }
+  }
+}

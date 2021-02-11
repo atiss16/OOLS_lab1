@@ -1,0 +1,16 @@
+C:\Users\Pinky\source\repos\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.dll
+C:\Users\Pinky\source\repos\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.pdb
+C:\Users\Pinky\source\repos\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csprojAssemblyReference.cache
+C:\Users\Pinky\source\repos\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Pinky\source\repos\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.dll
+C:\Users\Pinky\source\repos\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.pdb
+C:\Users\Pinky\Desktop\Проекты\Strategy\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.dll
+C:\Users\Pinky\Desktop\Проекты\Strategy\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.pdb
+C:\Users\Pinky\Desktop\Проекты\Strategy\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Pinky\Desktop\Проекты\Strategy\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.dll
+C:\Users\Pinky\Desktop\Проекты\Strategy\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.pdb
+D:\learning\OSU\ООЯиС\lab1\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.dll
+D:\learning\OSU\ООЯиС\lab1\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.pdb
+D:\learning\OSU\ООЯиС\lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csprojAssemblyReference.cache
+D:\learning\OSU\ООЯиС\lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.dll
+D:\learning\OSU\ООЯиС\lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.pdb
