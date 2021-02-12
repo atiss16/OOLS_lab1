@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Strategy.Domain.Models
 {
-    public class Unit : Cell
+    public abstract class Unit : Cell
     {
         public Unit(Player player)
         {
             Player = player;
         }
-
+        /// <summary>
+        /// Игрок, который управляет юнитом.
+        /// </summary>
         public Player Player { get; }
-
-
     }
 }

@@ -19,3 +19,9 @@ D:\learning\OSU\ООЯиС\lab1\OOLS_lab1\Strategy\Strategy.Domain\bin\Debug\Str
 D:\learning\OSU\ООЯиС\lab1\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csprojAssemblyReference.cache
 D:\learning\OSU\ООЯиС\lab1\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.dll
 D:\learning\OSU\ООЯиС\lab1\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.pdb
+C:\uni\oop\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csprojAssemblyReference.cache
+C:\uni\oop\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.csproj.CoreCompileInputs.cache
+C:\uni\oop\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.dll
+C:\uni\oop\OOLS_lab1\Strategy\Strategy.Domain\obj\Debug\Strategy.Domain.pdb
+C:\uni\oop\OOLS_lab1\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.dll
+C:\uni\oop\OOLS_lab1\Strategy\Strategy.Domain\bin\Debug\Strategy.Domain.pdb

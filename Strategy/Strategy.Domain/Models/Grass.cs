@@ -3,21 +3,12 @@
     /// <summary>
     /// Проходимая поверхность на земле.
     /// </summary>
-    public sealed class Grass
+    public sealed class Grass : Cell
     {
         /// <inheritdoc />
-        public Grass()
+        public Grass() : base()
         {
+            PathToImage = "Resources/Ground/Grass.png";
         }
-
-        /// <summary>
-        /// Координата x травы на карте.
-        /// </summary>
-        public int X { get; set; }
-
-        /// <summary>
-        /// Координата y травы на карте.
-        /// </summary>
-        public int Y { get; set; }
     }
 }
