@@ -19,6 +19,11 @@ namespace Strategy.Domain.Models
         public Player Player { get; }
 
         /// <summary>
+        /// Здоровье.
+        /// </summary>
+        protected abstract int Hp { get; set; }
+
+        /// <summary>
         /// Изображение мертвого юнита.
         /// </summary>
         public ImageSource DeadImage
@@ -27,6 +32,27 @@ namespace Strategy.Domain.Models
             {
                 return BuildSourceFromPath(PathToImage);
             }
+        }
+
+        /// <summary>
+        /// Метод уменьшения здоровья.
+        /// </summary>
+        protected void MinusHp (int damageValue)
+        {
+            Hp = Math.Max(Hp - damageValue, 0);
+        }
+
+        /// <summary>
+        /// Вычисление урона.
+        /// </summary>
+        public abstract int DamageValue(int tx, int ty);
+
+        /// <summary>
+        /// Проверка на смерть.
+        /// </summary>
+        public bool IsDead()
+        {
+            return Hp == 0;
         }
     }
 }

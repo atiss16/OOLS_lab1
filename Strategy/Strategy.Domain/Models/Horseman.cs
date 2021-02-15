@@ -12,5 +12,14 @@
         }
 
         protected override string PathToImage { get => "Resources/Ground/Horseman.png"; }
+
+        private int hp = 200;
+        protected override int Hp { get => hp; set => hp = value; }
+        
+
+        public override int DamageValue(int tx, int ty)
+        {
+            return 75;
+        }
     }
 }
