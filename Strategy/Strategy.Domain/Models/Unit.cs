@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Strategy.Domain.Models
 {
@@ -16,5 +17,16 @@ namespace Strategy.Domain.Models
         /// Игрок, который управляет юнитом.
         /// </summary>
         public Player Player { get; }
+
+        /// <summary>
+        /// Изображение мертвого юнита.
+        /// </summary>
+        public ImageSource DeadImage
+        {
+            get
+            {
+                return BuildSourceFromPath(PathToImage);
+            }
+        }
     }
 }
