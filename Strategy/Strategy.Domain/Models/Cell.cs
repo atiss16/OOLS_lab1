@@ -27,10 +27,10 @@ namespace Strategy.Domain.Models
         /// <summary>
         /// Путь к изображению 
         /// </summary>
-        protected string PathToImage { get; set; }
+        protected abstract string PathToImage { get; }
 
         /// <summary>
-        /// Путь к изображению
+        /// Изображение
         /// </summary>
         public ImageSource Image
         {
@@ -43,7 +43,7 @@ namespace Strategy.Domain.Models
         /// <summary>
         /// Получить изображение по указанному пути.
         /// </summary>
-        private static ImageSource BuildSourceFromPath(string path)
+        protected static ImageSource BuildSourceFromPath(string path)
         {
             return new BitmapImage(new Uri(path, UriKind.Relative));
         }

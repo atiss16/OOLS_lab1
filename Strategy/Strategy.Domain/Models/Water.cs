@@ -3,21 +3,15 @@
     /// <summary>
     /// Непроходимая наземная поверхность.
     /// </summary>
-    public sealed class Water
+    public sealed class Water : Cell
     {
+
         /// <inheritdoc />
-        public Water()
+        public Water() : base()
         {
+
         }
 
-        /// <summary>
-        /// Координата x воды на карте.
-        /// </summary>
-        public int X { get; set; }
-
-        /// <summary>
-        /// Координата y воды на карте.
-        /// </summary>
-        public int Y { get; set; }
+        protected override string PathToImage { get => "Resources/Ground/Water.png"; }
     }
 }

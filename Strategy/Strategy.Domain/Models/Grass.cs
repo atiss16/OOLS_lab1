@@ -8,7 +8,8 @@
         /// <inheritdoc />
         public Grass() : base()
         {
-            PathToImage = "Resources/Ground/Grass.png";
+
         }
+        protected override string PathToImage { get => "Resources/Ground/Grass.png"; }
     }
 }

@@ -8,7 +8,9 @@
         /// <inheritdoc />
         public Catapult(Player player) : base(player)
         {
-            PathToImage = "Resources/Units/Catapult.png";
+            
         }
+
+        protected override string PathToImage { get => "Resources/Units/Catapult.png"; }
     }
 }
