@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System;
+using System.Windows.Media;
 
 namespace Strategy.Domain.Models
 {
@@ -33,6 +34,11 @@ namespace Strategy.Domain.Models
             }
 
             return d;
+        }
+
+        public override bool CanMove(int x, int y)
+        {
+            return !(Math.Abs(X - x) > 3 || Math.Abs(Y - y) > 3);
         }
     }
 }

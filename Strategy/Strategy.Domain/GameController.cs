@@ -13,10 +13,6 @@ namespace Strategy.Domain
     {
         private readonly Map _map;
 
-        // Очки жизни каждого юнита.
-        private readonly Dictionary<object, int> _hp = new Dictionary<object, int>();
-
-
         /// <inheritdoc />
         public GameController(Map map)
         {
@@ -31,36 +27,8 @@ namespace Strategy.Domain
         /// <returns>Координата x, координата y.</returns>
         public Coordinates GetObjectCoordinates(object o)
         {
-            if (o is Archer a)
-            {
-                return new Coordinates(a.X, a.Y);
-            }
-
-            if (o is Catapult c)
-            {
+            if (o is Cell c)
                 return new Coordinates(c.X, c.Y);
-            }
-
-            if (o is Horseman h)
-            {
-                return new Coordinates(h.X, h.Y);
-            }
-
-            if (o is Swordsman s)
-            {
-                return new Coordinates(s.X, s.Y);
-            }
-
-            if (o is Grass g)
-            {
-                return new Coordinates(g.X, g.Y);
-            }
-
-            if (o is Water w)
-            {
-                return new Coordinates(w.X, w.Y);
-            }
-
             throw new ArgumentException("Неизвестный тип");
         }
 
@@ -76,30 +44,13 @@ namespace Strategy.Domain
         /// </returns>
         public bool CanMoveUnit(object u, int x, int y)
         {
-            if (u is Archer a)
-            {
-                if (Math.Abs(a.X - x) > 3 || Math.Abs(a.Y - y) > 3)
-                    return false;
-            }
-            else if (u is Catapult c)
-            {
-                if (Math.Abs(c.X - x) > 1 || Math.Abs(c.Y - y) > 1)
-                    return false;
-            }
-            else if (u is Horseman h)
-            {
-                if (Math.Abs(h.X - x) > 10 || Math.Abs(h.Y - y) > 10)
-                    return false;
-            }
-            else if (u is Swordsman s)
-            {
-                if (Math.Abs(s.X - x) > 5 || Math.Abs(s.Y - y) > 5)
+            if (u is Unit unit) {
+                if (!unit.CanMove(x, y))
                     return false;
             }
             else
                 throw new ArgumentException("Неизвестный тип");
-
-
+            
             foreach (object g in _map.Ground)
             {
                 if (g is Water w && w.X == x && w.Y == y)
@@ -110,30 +61,14 @@ namespace Strategy.Domain
 
             foreach (object u1 in _map.Units)
             {
-                if (u1 is Archer a1)
+                if (u1 is Unit tmpUnit)
                 {
-                    if (a1.X == x && a1.Y == y)
-                        return false;
-                }
-                else if (u1 is Catapult c1)
-                {
-                    if (c1.X == x && c1.Y == y)
-                        return false;
-                }
-                else if (u1 is Horseman h1)
-                {
-                    if (h1.X == x && h1.Y == y)
-                        return false;
-                }
-                else if (u1 is Swordsman s1)
-                {
-                    if (s1.X == x && s1.Y == y)
+                    if (tmpUnit.X == x && tmpUnit.Y == y)
                         return false;
                 }
                 else
                     throw new ArgumentException("Неизвестный тип");
             }
-
             return true;
         }
 
@@ -148,25 +83,10 @@ namespace Strategy.Domain
             if (!CanMoveUnit(u, x, y))
                 return;
 
-            if (u is Archer a)
+            if (u is Unit unit)
             {
-                a.X = x;
-                a.Y = y;
-            }
-            else if (u is Catapult c)
-            {
-                c.X = x;
-                c.Y = y;
-            }
-            else if (u is Horseman h)
-            {
-                h.X = x;
-                h.Y = y;
-            }
-            else if (u is Swordsman s)
-            {
-                s.X = x;
-                s.Y = y;
+                unit.X = x;
+                unit.Y = y;
             }
             else
                 throw new ArgumentException("Неизвестный тип");
@@ -204,7 +124,7 @@ namespace Strategy.Domain
             else
                 throw new ArgumentException("Неизвестный тип");
 
-            if (IsDead(tu))
+            if (tu is Unit tu1&& tu1.IsDead())
                 return false;
 
             if (au is Archer a1)
@@ -266,49 +186,7 @@ namespace Strategy.Domain
             if (!CanAttackUnit(au, tu))
                 return;
 
-            InitializeUnitHp(tu);
-            var thp = _hp[tu];
-            var cr = GetObjectCoordinates(tu);
-            int d = 0;
-
-            if (au is Archer a)
-            {
-                d = 50;
-
-                var dx = a.X - cr.X;
-                var dy = a.Y - cr.Y;
-
-                if ((dx == -1 || dx == 0 || dx == 1) &&
-                    (dy == -1 || dy == 0 || dy == 1))
-                {
-                    d /= 2;
-                }
-            }
-            else if (au is Catapult c)
-            {
-                d = 100;
-
-                var dx = c.X - cr.X;
-                var dy = c.Y - cr.Y;
-
-                if ((dx == -1 || dx == 0 || dx == 1) &&
-                    (dy == -1 || dy == 0 || dy == 1))
-                {
-                    d /= 2;
-                }
-            }
-            else if (au is Horseman)
-            {
-                d = 75;
-            }
-            else if (au is Swordsman)
-            {
-                d = 50;
-            }
-            else
-                throw new ArgumentException("Неизвестный тип");
-
-            _hp[tu] = Math.Max(thp - d, 0);
+           
         }
 
         /// <summary>
@@ -318,7 +196,7 @@ namespace Strategy.Domain
         {
             if (o is Unit u)
             {
-                if (IsDead(o))
+                if (u.IsDead())
                     return u.DeadImage;
 
                 return u.Image;
@@ -328,52 +206,6 @@ namespace Strategy.Domain
                 return c.Image;
 
             throw new ArgumentException("Неизвестный тип");
-        }
-
-        /// <summary>
-        /// Проверить, что указанный юнит умер.
-        /// </summary>
-        /// <param name="u">Юнит.</param>
-        /// <returns>
-        /// <see langvalue="true" />, если у юнита не осталось очков здоровья,
-        /// <see langvalue="false" /> - иначе.
-        /// </returns>
-        private bool IsDead(object u)
-        {
-            if (_hp.TryGetValue(u, out var hp))
-                return hp == 0;
-
-            InitializeUnitHp(u);
-            return false;
-        }
-
-        /// <summary>
-        /// Инициализировать здоровье юнита.
-        /// </summary>
-        /// <param name="u">Юнит.</param>
-        private void InitializeUnitHp(object u)
-        {
-            if (_hp.ContainsKey(u))
-                return;
-
-            if (u is Archer)
-            {
-                _hp.Add(u, 50);
-            }
-            else if (u is Catapult)
-            {
-                _hp.Add(u, 70);
-            }
-            else if (u is Horseman)
-            {
-                _hp.Add(u, 200);
-            }
-            else if (u is Swordsman)
-            {
-                _hp.Add(u, 100);
-            }
-            else
-                throw new ArgumentException("Неизвестный тип");
         }
 
         /// <summary>

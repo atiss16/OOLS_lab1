@@ -1,4 +1,6 @@
-﻿namespace Strategy.Domain.Models
+﻿using System;
+
+namespace Strategy.Domain.Models
 {
     /// <summary>
     /// Класс мечника.
@@ -18,6 +20,11 @@
         public override int DamageValue(int tx, int ty)
         {
             return 50;
+        }
+
+        public override bool CanMove(int x, int y)
+        {
+            return !(Math.Abs(X - x) > 5 || Math.Abs(Y - y) > 5);
         }
     }
 }

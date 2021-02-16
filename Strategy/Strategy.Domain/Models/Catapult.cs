@@ -1,4 +1,6 @@
-﻿namespace Strategy.Domain.Models
+﻿using System;
+
+namespace Strategy.Domain.Models
 {
     /// <summary>
     /// Катапульта.
@@ -30,6 +32,11 @@
             }
 
             return d;
+        }
+
+        public override bool CanMove(int x, int y)
+        {
+            return !(Math.Abs(X - x) > 1 || Math.Abs(Y - y) > 1);
         }
     }
 }

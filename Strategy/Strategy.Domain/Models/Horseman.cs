@@ -1,4 +1,6 @@
-﻿namespace Strategy.Domain.Models
+﻿using System;
+
+namespace Strategy.Domain.Models
 {
     /// <summary>
     /// Класс всадника.
@@ -20,6 +22,11 @@
         public override int DamageValue(int tx, int ty)
         {
             return 75;
+        }
+
+        public override bool CanMove(int x, int y)
+        {
+            return ! (Math.Abs(X - x) > 10 || Math.Abs(Y - y) > 10);
         }
     }
 }

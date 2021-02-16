@@ -47,6 +47,12 @@ namespace Strategy.Domain.Models
         /// </summary>
         public abstract int DamageValue(int tx, int ty);
 
+
+        /// <summary>
+        /// Проверка на возможность перемещения.
+        /// </summary>
+        public abstract bool CanMove(int x, int y);
+
         /// <summary>
         /// Проверка на смерть.
         /// </summary>
