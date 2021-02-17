@@ -15,7 +15,8 @@ namespace Strategy.Domain.Models
         protected override string PathToImage { get => "Resources/Ground/Swordsman.png"; }
 
         private int hp = 100;
-        protected override int Hp { get => hp; set => hp = value; }        
+        protected override int Hp { get => hp; set => hp = value; }
+        protected override int MaximumAttackDistance => 1;
 
         public override int DamageValue(int tx, int ty)
         {

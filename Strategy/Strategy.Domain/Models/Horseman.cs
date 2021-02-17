@@ -17,7 +17,8 @@ namespace Strategy.Domain.Models
 
         private int hp = 200;
         protected override int Hp { get => hp; set => hp = value; }
-        
+        protected override int MaximumAttackDistance => 1;
+
 
         public override int DamageValue(int tx, int ty)
         {

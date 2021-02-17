@@ -19,7 +19,6 @@ namespace Strategy.Domain
             _map = map;
         }
 
-
         /// <summary>
         /// Получить координаты объекта.
         /// </summary>
@@ -103,77 +102,12 @@ namespace Strategy.Domain
         /// </returns>
         public bool CanAttackUnit(object au, object tu)
         {
-            var cr = GetObjectCoordinates(tu);
-            Player ptu;
-            if (tu is Archer a)
+            if (tu is Unit targetUnit && au is Unit attackingUnit)
             {
-                ptu = a.Player;
-            }
-            else if (tu is Catapult c)
-            {
-                ptu = c.Player;
-            }
-            else if (tu is Horseman h)
-            {
-                ptu = h.Player;
-            }
-            else if (tu is Swordsman s)
-            {
-                ptu = s.Player;
+                return attackingUnit.CanAttack(targetUnit);
             }
             else
                 throw new ArgumentException("Неизвестный тип");
-
-            if (tu is Unit tu1&& tu1.IsDead())
-                return false;
-
-            if (au is Archer a1)
-            {
-                if (a1.Player == ptu)
-                    return false;
-
-                var dx = a1.X - cr.X;
-                var dy = a1.Y - cr.Y;
-
-                return dx >= -5 && dx <= 5 && dy >= -5 && dy <= 5;
-            }
-
-            if (au is Catapult c1)
-            {
-                if (c1.Player == ptu)
-                    return false;
-
-                var dx = c1.X - cr.X;
-                var dy = c1.Y - cr.Y;
-
-                return dx >= -10 && dx <= 10 && dy >= -10 && dy <= 10;
-            }
-
-            if (au is Horseman h1)
-            {
-                if (h1.Player == ptu)
-                    return false;
-
-                var dx = h1.X - cr.X;
-                var dy = h1.Y - cr.Y;
-
-                return (dx == -1 || dx == 0 || dx == 1) &&
-                       (dy == -1 || dy == 0 || dy == 1);
-            }
-
-            if (au is Swordsman s1)
-            {
-                if (s1.Player == ptu)
-                    return false;
-
-                var dx = s1.X - cr.X;
-                var dy = s1.Y - cr.Y;
-
-                return (dx == -1 || dx == 0 || dx == 1) &&
-                       (dy == -1 || dy == 0 || dy == 1);
-            }
-
-            throw new ArgumentException("Неизвестный тип");
         }
 
         /// <summary>
@@ -186,7 +120,13 @@ namespace Strategy.Domain
             if (!CanAttackUnit(au, tu))
                 return;
 
-           
+            if (au is Unit attackingUnit && tu is Unit targetUnit)
+            {
+                int damage = attackingUnit.DamageValue(targetUnit.X, targetUnit.Y);
+                targetUnit.MinusHp(damage);
+            }
+            else
+                throw new ArgumentException("Неизвестный тип");            
         }
 
         /// <summary>
@@ -206,14 +146,6 @@ namespace Strategy.Domain
                 return c.Image;
 
             throw new ArgumentException("Неизвестный тип");
-        }
-
-        /// <summary>
-        /// Получить изображение по указанному пути.
-        /// </summary>
-        private static ImageSource BuildSourceFromPath(string path)
-        {
-            return new BitmapImage(new Uri(path, UriKind.Relative));
         }
     }
 }
