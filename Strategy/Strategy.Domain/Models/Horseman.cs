@@ -19,15 +19,12 @@ namespace Strategy.Domain.Models
         protected override int Hp { get => hp; set => hp = value; }
         protected override int MaximumAttackDistance => 1;
 
+        protected override int MaximumMoveDistance => 10;
 
         public override int DamageValue(int tx, int ty)
         {
             return 75;
         }
 
-        public override bool CanMove(int x, int y)
-        {
-            return ! (Math.Abs(X - x) > 10 || Math.Abs(Y - y) > 10);
-        }
     }
 }

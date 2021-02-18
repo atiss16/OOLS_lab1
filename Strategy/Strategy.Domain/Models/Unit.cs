@@ -28,6 +28,12 @@ namespace Strategy.Domain.Models
         /// </summary>
         protected abstract int MaximumAttackDistance { get; }
 
+
+        /// <summary>
+        /// Максимальное расстояние, на которое можно передвинуться.
+        /// </summary>
+        protected abstract int MaximumMoveDistance { get; }
+
         /// <summary>
         /// Изображение мертвого юнита.
         /// </summary>
@@ -45,21 +51,11 @@ namespace Strategy.Domain.Models
         /// <summary>
         /// Вычисление урона.
         /// </summary>
-        /// <param name="tx">Координата x юнита, который является целью</param>
-        /// <param name="ty">Координата y юнита, который является целью</param>
-        /// <returns>
-        /// Возвращает <see langvalue="int" /> величину урона
-        /// </returns>
         public abstract int DamageValue(int tx, int ty);
 
         /// <summary>
         /// Проверка на возможность атаки.
         /// </summary>
-        /// <param name="targetUnit">Юнит, который является целью</param>
-        /// <returns>
-        /// <see langvalue="true" />, если атака возможна
-        /// <see langvalue="false" /> - иначе.
-        /// </returns>
         public bool CanAttack(Unit targetUnit)
         {
             if (targetUnit.IsDead())
@@ -76,9 +72,12 @@ namespace Strategy.Domain.Models
 
 
         /// <summary>
-        /// Проверка на возможность перемещения.
+        /// Может ли юнит передвинуться в указанную клетку.
         /// </summary>
-        public abstract bool CanMove(int x, int y);
+        public bool CanMove(int x, int y)
+        {
+            return !(Math.Abs(X - x) > MaximumMoveDistance || Math.Abs(Y - y) > MaximumMoveDistance);
+        }
 
         /// <summary>
         /// Проверка на смерть.
